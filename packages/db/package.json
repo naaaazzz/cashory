@@ -3,13 +3,17 @@
   "type": "module",
   "exports": {
     ".": {
-      "default": "./src/index.ts"
+      "default": "./dist/index.js"
     },
-    "./*": {
-      "default": "./src/*.ts"
+    "./schema": {
+      "default": "./dist/schema/index.js"
+    },
+    "./schema/*": {
+      "default": "./dist/schema/*.js"
     }
   },
   "scripts": {
+    "build": "bun build ./src/index.ts --target node --format esm --outfile dist/index.js && bun build ./src/schema/index.ts --target node --format esm --outfile dist/schema/index.js && bun build ./src/schema/_relations.ts --target node --format esm --outfile dist/schema/_relations.js && bun build ./src/schema/auth.ts --target node --format esm --outfile dist/schema/auth.js && bun build ./src/schema/budget.ts --target node --format esm --outfile dist/schema/budget.js && bun build ./src/schema/category.ts --target node --format esm --outfile dist/schema/category.js && bun build ./src/schema/invoice.ts --target node --format esm --outfile dist/schema/invoice.js && bun build ./src/schema/notification.ts --target node --format esm --outfile dist/schema/notification.js && bun build ./src/schema/transaction.ts --target node --format esm --outfile dist/schema/transaction.js && bun build ./src/schema/wallet.ts --target node --format esm --outfile dist/schema/wallet.js",
     "db:push": "bun run ./scripts/drizzle.ts push",
     "db:generate": "bun run ./scripts/drizzle.ts generate",
     "db:studio": "bun run ./scripts/drizzle.ts studio",

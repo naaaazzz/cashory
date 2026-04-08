@@ -4,8 +4,11 @@
   "private": true,
   "type": "module",
   "exports": {
-    "./server": "./src/server.ts",
-    "./native": "./src/native.ts"
+    "./server": "./dist/server.js",
+    "./native": "./dist/native.js"
+  },
+  "scripts": {
+    "build": "bun build ./src/server.ts --target node --format esm --outfile dist/server.js && bun build ./src/native.ts --target node --format esm --outfile dist/native.js"
   },
   "dependencies": {
     "@t3-oss/env-core": "^0.13.1",

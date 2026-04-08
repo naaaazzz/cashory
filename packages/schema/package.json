@@ -3,11 +3,14 @@
   "type": "module",
   "exports": {
     ".": {
-      "default": "./src/index.ts"
+      "default": "./dist/index.js"
     },
     "./*": {
-      "default": "./src/*.ts"
+      "default": "./dist/*.js"
     }
+  },
+  "scripts": {
+    "build": "bun build ./src/index.ts --target node --format esm --outfile dist/index.js && bun build ./src/auth.schema.ts --target node --format esm --outfile dist/auth.schema.js && bun build ./src/budget.schema.ts --target node --format esm --outfile dist/budget.schema.js && bun build ./src/category.schema.ts --target node --format esm --outfile dist/category.schema.js && bun build ./src/invoice.schema.ts --target node --format esm --outfile dist/invoice.schema.js && bun build ./src/notification.schema.ts --target node --format esm --outfile dist/notification.schema.js && bun build ./src/transaction.schema.ts --target node --format esm --outfile dist/transaction.schema.js && bun build ./src/wallet.schema.ts --target node --format esm --outfile dist/wallet.schema.js"
   },
   "dependencies": {
     "zod": "catalog:"
