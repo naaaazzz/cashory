@@ -1,0 +1,31 @@
+{
+  "name": "@cashory-demo/db",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {
+    "db:push": "bun run ./scripts/drizzle.ts push",
+    "db:generate": "bun run ./scripts/drizzle.ts generate",
+    "db:studio": "bun run ./scripts/drizzle.ts studio",
+    "db:migrate": "bun run ./scripts/drizzle.ts migrate"
+  },
+  "dependencies": {
+    "@cashory-demo/env": "workspace:*",
+    "dotenv": "catalog:",
+    "drizzle-orm": "^0.45.1",
+    "pg": "^8.17.1",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@cashory-demo/config": "workspace:*",
+    "@types/pg": "^8.16.0",
+    "drizzle-kit": "^0.31.8",
+    "typescript": "catalog:"
+  }
+}

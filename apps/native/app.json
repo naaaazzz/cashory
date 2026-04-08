@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "scheme": "cashory-demo",
+    "userInterfaceStyle": "automatic",
+    "orientation": "default",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "Cashory Demo",
+    "slug": "Cashory-Demo",
+    "plugins": [
+      "expo-font",
+      "expo-image",
+      "expo-router",
+      "expo-secure-store",
+      "@react-native-community/datetimepicker"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
