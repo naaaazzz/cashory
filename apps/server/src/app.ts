@@ -21,6 +21,13 @@ const app = new Hono()
       credentials: true,
     }),
   )
+  .get("/", (c) =>
+    c.json({
+      status: "ok",
+      service: "cashory-server",
+      environment: env.NODE_ENV,
+    }),
+  )
   .on(["POST", "GET"], "/api/auth/*", (c) => auth.handler(c.req.raw))
 
   .route("/api/category", categoryRoutes)
