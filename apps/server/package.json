@@ -17,6 +17,7 @@
     "@cashory-demo/db": "workspace:*",
     "@cashory-demo/env": "workspace:*",
     "@cashory-demo/schema": "workspace:*",
+    "@hono/node-server": "^1.19.6",
     "@hono/zod-validator": "^0.7.6",
     "better-auth": "catalog:",
     "dotenv": "catalog:",
